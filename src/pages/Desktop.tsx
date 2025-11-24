@@ -127,7 +127,46 @@ const Desktop = () => {
               <stop offset="50%" stopColor="hsl(180, 70%, 60%)" stopOpacity="1" />
               <stop offset="100%" stopColor="hsl(300, 80%, 60%)" stopOpacity="0.8" />
             </linearGradient>
+            
+            <radialGradient id="fogGradient" cx="50%" cy="50%">
+              <stop offset="0%" stopColor="hsl(180, 60%, 50%)" stopOpacity="0.6" />
+              <stop offset="50%" stopColor="hsl(254, 70%, 50%)" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="hsl(254, 70%, 40%)" stopOpacity="0" />
+            </radialGradient>
+            
+            <filter id="turbulence" x="-50%" y="-50%" width="200%" height="200%">
+              <feTurbulence baseFrequency="0.01" numOctaves="3" seed="2">
+                <animate attributeName="baseFrequency" 
+                  dur="20s" 
+                  values="0.01;0.02;0.01" 
+                  repeatCount="indefinite"/>
+              </feTurbulence>
+              <feDisplacementMap in="SourceGraphic" scale="20"/>
+            </filter>
           </defs>
+          
+          {/* Fog Layers */}
+          <g className="fog-layer-1">
+            <ellipse cx="200" cy="200" rx="180" ry="50" 
+              fill="url(#fogGradient)" 
+              filter="url(#turbulence)"
+              opacity="0.4"
+            />
+          </g>
+          <g className="fog-layer-2">
+            <ellipse cx="200" cy="200" rx="160" ry="45" 
+              fill="url(#fogGradient)" 
+              filter="url(#turbulence)"
+              opacity="0.3"
+            />
+          </g>
+          <g className="fog-layer-3">
+            <ellipse cx="200" cy="200" rx="140" ry="40" 
+              fill="url(#fogGradient)" 
+              filter="url(#turbulence)"
+              opacity="0.5"
+            />
+          </g>
           
           {/* Outer Glow */}
           <circle cx="200" cy="200" r="140" fill="url(#glowGradient)" className="planet-pulse" />
@@ -272,6 +311,51 @@ const Desktop = () => {
         
         .glitch-layer-2 {
           animation: glitch-2 4s infinite;
+        }
+        
+        @keyframes fog-drift-1 {
+          0%, 100% { 
+            transform: translateX(0) scale(1);
+            opacity: 0.4;
+          }
+          50% { 
+            transform: translateX(20px) scale(1.1);
+            opacity: 0.6;
+          }
+        }
+        
+        @keyframes fog-drift-2 {
+          0%, 100% { 
+            transform: translateX(0) translateY(0) scale(1);
+            opacity: 0.3;
+          }
+          50% { 
+            transform: translateX(-15px) translateY(10px) scale(1.15);
+            opacity: 0.5;
+          }
+        }
+        
+        @keyframes fog-drift-3 {
+          0%, 100% { 
+            transform: translateY(0) scale(1);
+            opacity: 0.5;
+          }
+          50% { 
+            transform: translateY(-15px) scale(1.05);
+            opacity: 0.7;
+          }
+        }
+        
+        .fog-layer-1 {
+          animation: fog-drift-1 15s ease-in-out infinite;
+        }
+        
+        .fog-layer-2 {
+          animation: fog-drift-2 18s ease-in-out infinite;
+        }
+        
+        .fog-layer-3 {
+          animation: fog-drift-3 12s ease-in-out infinite;
         }
       `}</style>
 
