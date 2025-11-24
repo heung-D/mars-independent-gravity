@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import DesktopIcon from '@/components/DesktopIcon';
 import Window from '@/components/Window';
 import Taskbar from '@/components/Taskbar';
@@ -7,7 +7,6 @@ import ArtistsWindow from '@/components/windows/ArtistsWindow';
 import ShopWindow from '@/components/windows/ShopWindow';
 import VFXWindow from '@/components/windows/VFXWindow';
 import DNALabWindow from '@/components/windows/DNALabWindow';
-import LoadingScreen from '@/components/LoadingScreen';
 
 interface OpenWindow {
   id: string;
@@ -19,7 +18,7 @@ interface OpenWindow {
 }
 
 const Desktop = () => {
-  const [isLoading, setIsLoading] = useState(true);
+
   const [openWindows, setOpenWindows] = useState<OpenWindow[]>([
     {
       id: 'dnalab',
@@ -31,14 +30,6 @@ const Desktop = () => {
     }
   ]);
   const [maxZIndex, setMaxZIndex] = useState(100);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   const icons = [
     { id: 'dnalab', name: 'DNA LAB', icon: '🧬', component: <DNALabWindow /> },
@@ -94,26 +85,14 @@ const Desktop = () => {
     setMaxZIndex(newZIndex);
   };
 
-  if (isLoading) {
-    return <LoadingScreen />;
-  }
-
   return (
-    <div className="h-screen w-screen overflow-hidden bg-black relative">
-      {/* CRT Overlay Effects */}
-      <div className="crt-overlay fixed inset-0 pointer-events-none z-[9999]">
-        {/* Scanlines */}
-        <div className="absolute inset-0 scanlines"></div>
-        {/* Vignette glow */}
-        <div className="absolute inset-0 vignette"></div>
-      </div>
-
+    <div className="h-screen w-screen overflow-hidden bg-gradient-to-br from-[hsl(254,80%,35%)] via-[hsl(230,70%,40%)] to-[hsl(195,60%,35%)] relative">
       {/* Starfield Effect */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-30">
         {[...Array(100)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-0.5 h-0.5 bg-[#00ff41] rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
