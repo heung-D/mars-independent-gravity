@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DesktopIcon from '@/components/DesktopIcon';
 import Window from '@/components/Window';
 import Taskbar from '@/components/Taskbar';
@@ -7,6 +7,7 @@ import ArtistsWindow from '@/components/windows/ArtistsWindow';
 import ShopWindow from '@/components/windows/ShopWindow';
 import VFXWindow from '@/components/windows/VFXWindow';
 import DNALabWindow from '@/components/windows/DNALabWindow';
+import LoadingScreen from '@/components/LoadingScreen';
 
 interface OpenWindow {
   id: string;
@@ -18,7 +19,7 @@ interface OpenWindow {
 }
 
 const Desktop = () => {
-
+  const [isLoading, setIsLoading] = useState(true);
   const [openWindows, setOpenWindows] = useState<OpenWindow[]>([
     {
       id: 'dnalab',
@@ -30,6 +31,14 @@ const Desktop = () => {
     }
   ]);
   const [maxZIndex, setMaxZIndex] = useState(100);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const icons = [
     { id: 'dnalab', name: 'DNA LAB', icon: '🧬', component: <DNALabWindow /> },
@@ -84,6 +93,10 @@ const Desktop = () => {
     ));
     setMaxZIndex(newZIndex);
   };
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <div className="h-screen w-screen overflow-hidden bg-black relative">
