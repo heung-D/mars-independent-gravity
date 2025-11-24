@@ -7,7 +7,7 @@ import ArtistsWindow from '@/components/windows/ArtistsWindow';
 import ShopWindow from '@/components/windows/ShopWindow';
 import VFXWindow from '@/components/windows/VFXWindow';
 import DNALabWindow from '@/components/windows/DNALabWindow';
-import marsPlanet from '@/assets/mars-planet.png';
+import marsPlanet from '@/assets/mars-planet-glitch.png';
 
 interface OpenWindow {
   id: string;
@@ -104,18 +104,84 @@ const Desktop = () => {
         ))}
       </div>
 
-      {/* MAR/S Planet */}
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-40 pointer-events-none">
-        <img 
-          src={marsPlanet} 
-          alt="MAR/S Planet" 
-          className="w-full h-full object-contain animate-pulse"
-          style={{
-            animation: 'pulse 8s ease-in-out infinite',
-            filter: 'blur(1px)'
-          }}
-        />
+      {/* MAR/S Planet with Rotation & Glitch */}
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-50 pointer-events-none overflow-visible">
+        <div className="relative w-full h-full planet-container">
+          <img 
+            src={marsPlanet} 
+            alt="MAR/S Planet" 
+            className="w-full h-full object-contain planet-rotate"
+          />
+          {/* Glitch layers */}
+          <img 
+            src={marsPlanet} 
+            alt="" 
+            className="absolute inset-0 w-full h-full object-contain planet-glitch-1"
+          />
+          <img 
+            src={marsPlanet} 
+            alt="" 
+            className="absolute inset-0 w-full h-full object-contain planet-glitch-2"
+          />
+        </div>
       </div>
+
+      <style>{`
+        @keyframes rotate-planet {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes glitch-1 {
+          0%, 90%, 100% { 
+            opacity: 0;
+            transform: translate(0, 0);
+          }
+          91% { 
+            opacity: 0.7;
+            transform: translate(-3px, 2px);
+            filter: hue-rotate(90deg);
+          }
+          93% { 
+            opacity: 0;
+            transform: translate(2px, -2px);
+          }
+        }
+        
+        @keyframes glitch-2 {
+          0%, 85%, 100% { 
+            opacity: 0;
+            transform: translate(0, 0);
+          }
+          86% { 
+            opacity: 0.6;
+            transform: translate(2px, -3px);
+            filter: hue-rotate(-90deg);
+          }
+          88% { 
+            opacity: 0;
+            transform: translate(-2px, 3px);
+          }
+        }
+        
+        .planet-rotate {
+          animation: rotate-planet 60s linear infinite;
+        }
+        
+        .planet-glitch-1 {
+          animation: glitch-1 3s infinite;
+          mix-blend-mode: screen;
+        }
+        
+        .planet-glitch-2 {
+          animation: glitch-2 4s infinite;
+          mix-blend-mode: screen;
+        }
+        
+        .planet-container {
+          filter: drop-shadow(0 0 30px rgba(180, 70, 255, 0.4));
+        }
+      `}</style>
 
       {/* Desktop Icons Grid */}
       <div className="absolute top-8 left-8 grid gap-6">
