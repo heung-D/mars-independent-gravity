@@ -7,6 +7,7 @@ import ArtistsWindow from '@/components/windows/ArtistsWindow';
 import ShopWindow from '@/components/windows/ShopWindow';
 import VFXWindow from '@/components/windows/VFXWindow';
 import DNALabWindow from '@/components/windows/DNALabWindow';
+import marsPlanet from '@/assets/mars-planet.png';
 
 interface OpenWindow {
   id: string;
@@ -101,6 +102,19 @@ const Desktop = () => {
             }}
           />
         ))}
+      </div>
+
+      {/* MAR/S Planet */}
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-40 pointer-events-none">
+        <img 
+          src={marsPlanet} 
+          alt="MAR/S Planet" 
+          className="w-full h-full object-contain animate-pulse"
+          style={{
+            animation: 'pulse 8s ease-in-out infinite',
+            filter: 'blur(1px)'
+          }}
+        />
       </div>
 
       {/* Desktop Icons Grid */}
