@@ -28,25 +28,25 @@ const MinimalNav = () => {
         <div className="hidden md:flex items-center gap-12">
           <a 
             href="#ecosystem" 
-            className="text-sm text-foreground/60 hover:text-foreground transition-colors duration-300 uppercase tracking-wider"
+            className="text-sm text-foreground hover:text-primary transition-colors duration-300 uppercase tracking-wider font-semibold"
           >
             Ecosystem
           </a>
           <a 
             href="#artists" 
-            className="text-sm text-foreground/60 hover:text-foreground transition-colors duration-300 uppercase tracking-wider"
+            className="text-sm text-foreground hover:text-primary transition-colors duration-300 uppercase tracking-wider font-semibold"
           >
             Artists
           </a>
           <a 
             href="#universe" 
-            className="text-sm text-foreground/60 hover:text-foreground transition-colors duration-300 uppercase tracking-wider"
+            className="text-sm text-foreground hover:text-primary transition-colors duration-300 uppercase tracking-wider font-semibold"
           >
             Universe
           </a>
           <a 
             href="#contact" 
-            className="text-sm text-foreground/60 hover:text-foreground transition-colors duration-300 uppercase tracking-wider"
+            className="text-sm text-foreground hover:text-primary transition-colors duration-300 uppercase tracking-wider font-semibold"
           >
             Contact
           </a>
