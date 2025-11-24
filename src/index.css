@@ -8,9 +8,9 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* MAR/S Planetary Color System */
-    --background: 6 10% 4%;
-    --foreground: 25 70% 97%;
+    /* MAR/S Planetary Color System - Minimal Dark */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
 
     --card: 6 10% 6%;
     --card-foreground: 25 70% 97%;
