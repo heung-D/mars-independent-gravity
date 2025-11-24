@@ -8,57 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* MAR/S Retro OS Color System */
-    --background: 245 30% 80%;
-    --foreground: 0 0% 10%;
+    /* Purple & Blue Cosmic Theme with Hot Pink Accent */
+    --background: 250 20% 85%;
+    --foreground: 270 10% 15%;
 
-    --card: 240 10% 90%;
-    --card-foreground: 0 0% 10%;
+    --card: 250 15% 90%;
+    --card-foreground: 270 10% 15%;
 
-    --popover: 240 10% 95%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 250 20% 95%;
+    --popover-foreground: 270 10% 15%;
 
-    /* Mars Red Core - Primary brand color */
-    --primary: 6 59% 48%;
+    /* Deep Purple - Primary brand color */
+    --primary: 270 70% 55%;
     --primary-foreground: 0 0% 100%;
 
-    /* Dark Lava Black - Secondary surfaces */
-    --secondary: 240 4% 70%;
-    --secondary-foreground: 0 0% 10%;
+    /* Soft Purple - Secondary surfaces */
+    --secondary: 260 40% 75%;
+    --secondary-foreground: 270 10% 15%;
 
-    /* Cosmic Blue Signal - AI elements */
-    --signal: 230 100% 62%;
+    /* Cyan Blue - Signal/Tech elements */
+    --signal: 195 100% 60%;
     --signal-foreground: 0 0% 100%;
 
-    /* Nebula Violet - Energy accents */
-    --nebula: 254 100% 66%;
+    /* Electric Violet - Energy accents */
+    --nebula: 280 85% 65%;
     --nebula-foreground: 0 0% 100%;
 
-    /* Dust Orange Glow - Ground/Surface */
-    --dust: 16 94% 64%;
-    --dust-foreground: 0 0% 10%;
+    /* Hot Pink - Point color */
+    --dust: 335 100% 60%;
+    --dust-foreground: 0 0% 100%;
 
     /* Windows 95 UI Colors */
-    --win95-gray: 0 0% 75%;
-    --win95-dark-gray: 0 0% 50%;
-    --win95-light-gray: 0 0% 95%;
+    --win95-gray: 250 10% 75%;
+    --win95-dark-gray: 250 10% 50%;
+    --win95-light-gray: 250 10% 95%;
     --win95-border-light: 0 0% 100%;
-    --win95-border-dark: 0 0% 40%;
-    --win95-titlebar: 230 100% 45%;
-    --win95-titlebar-gradient: linear-gradient(90deg, hsl(230 100% 45%), hsl(195 100% 50%));
+    --win95-border-dark: 250 10% 40%;
+    --win95-titlebar: 270 70% 50%;
+    --win95-titlebar-gradient: linear-gradient(90deg, hsl(270 70% 50%), hsl(195 100% 55%));
 
-    --muted: 0 0% 60%;
-    --muted-foreground: 0 0% 30%;
+    --muted: 250 15% 65%;
+    --muted-foreground: 250 15% 35%;
 
-    --accent: 230 100% 62%;
+    --accent: 335 100% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 40%;
-    --input: 0 0% 100%;
-    --ring: 230 100% 62%;
+    --border: 250 15% 50%;
+    --input: 250 20% 100%;
+    --ring: 335 100% 60%;
 
     --radius: 0rem;
 

@@ -86,7 +86,7 @@ const Desktop = () => {
   };
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-gradient-to-br from-[hsl(254,80%,35%)] via-[hsl(230,70%,40%)] to-[hsl(195,60%,35%)] relative">
+    <div className="h-screen w-screen overflow-hidden bg-gradient-to-br from-[hsl(270,70%,25%)] via-[hsl(260,60%,35%)] to-[hsl(195,70%,30%)] relative">
       {/* Starfield Effect */}
       <div className="absolute inset-0 opacity-30">
         {[...Array(100)].map((_, i) => (
