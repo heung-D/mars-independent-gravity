@@ -27,6 +27,18 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        signal: {
+          DEFAULT: "hsl(var(--signal))",
+          foreground: "hsl(var(--signal-foreground))",
+        },
+        nebula: {
+          DEFAULT: "hsl(var(--nebula))",
+          foreground: "hsl(var(--nebula-foreground))",
+        },
+        dust: {
+          DEFAULT: "hsl(var(--dust))",
+          foreground: "hsl(var(--dust-foreground))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -47,16 +59,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+      },
+      backgroundImage: {
+        'gradient-mars': 'var(--gradient-mars)',
+        'gradient-signal': 'var(--gradient-signal)',
+        'gradient-planet': 'var(--gradient-planet)',
+      },
+      boxShadow: {
+        'glow-mars': 'var(--glow-mars)',
+        'glow-signal': 'var(--glow-signal)',
       },
       borderRadius: {
         lg: "var(--radius)",
