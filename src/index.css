@@ -9,33 +9,33 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Purple & Blue Cosmic Theme with Hot Pink Accent */
-    --background: 250 20% 85%;
-    --foreground: 270 10% 15%;
+    --background: 270 15% 8%;
+    --foreground: 270 10% 95%;
 
-    --card: 250 15% 90%;
-    --card-foreground: 270 10% 15%;
+    --card: 270 20% 12%;
+    --card-foreground: 270 10% 95%;
 
-    --popover: 250 20% 95%;
-    --popover-foreground: 270 10% 15%;
+    --popover: 270 20% 10%;
+    --popover-foreground: 270 10% 95%;
 
-    /* Deep Purple - Primary brand color */
-    --primary: 270 70% 55%;
+    /* Deep Purple - Primary brand color (Higher saturation) */
+    --primary: 270 95% 65%;
     --primary-foreground: 0 0% 100%;
 
     /* Soft Purple - Secondary surfaces */
-    --secondary: 260 40% 75%;
-    --secondary-foreground: 270 10% 15%;
+    --secondary: 260 60% 75%;
+    --secondary-foreground: 0 0% 10%;
 
-    /* Cyan Blue - Signal/Tech elements */
-    --signal: 195 100% 60%;
+    /* Cyan Blue - Signal/Tech elements (Higher saturation) */
+    --signal: 195 100% 70%;
     --signal-foreground: 0 0% 100%;
 
-    /* Electric Violet - Energy accents */
-    --nebula: 280 85% 65%;
+    /* Electric Violet - Energy accents (Higher saturation) */
+    --nebula: 280 100% 70%;
     --nebula-foreground: 0 0% 100%;
 
-    /* Hot Pink - Point color */
-    --dust: 335 100% 60%;
+    /* Hot Pink - Point color (Maximum saturation) */
+    --dust: 335 100% 65%;
     --dust-foreground: 0 0% 100%;
 
     /* Windows 95 UI Colors */

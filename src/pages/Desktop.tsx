@@ -86,9 +86,23 @@ const Desktop = () => {
   };
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-gradient-to-br from-[hsl(270,70%,25%)] via-[hsl(260,60%,35%)] to-[hsl(195,70%,30%)] relative">
+    <div className="h-screen w-screen overflow-hidden bg-[hsl(270,20%,5%)] relative">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-40"
+      >
+        <source src="/videos/space-background.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(270,90%,15%)]/30 via-transparent to-[hsl(195,100%,20%)]/20" />
+      
       {/* Starfield Effect */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-20">
         {[...Array(100)].map((_, i) => (
           <div
             key={i}
