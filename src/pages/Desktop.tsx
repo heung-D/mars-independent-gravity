@@ -6,6 +6,7 @@ import BGMWindow from '@/components/windows/BGMWindow';
 import ArtistsWindow from '@/components/windows/ArtistsWindow';
 import ShopWindow from '@/components/windows/ShopWindow';
 import VFXWindow from '@/components/windows/VFXWindow';
+import DNALabWindow from '@/components/windows/DNALabWindow';
 
 interface OpenWindow {
   id: string;
@@ -21,6 +22,7 @@ const Desktop = () => {
   const [maxZIndex, setMaxZIndex] = useState(100);
 
   const icons = [
+    { id: 'dnalab', name: 'DNA LAB', icon: '🧬', component: <DNALabWindow /> },
     { id: 'bgm', name: 'BGM', icon: '🎵', component: <BGMWindow /> },
     { id: 'artists', name: 'Artists', icon: '👤', component: <ArtistsWindow /> },
     { id: 'shop', name: 'MAD SHOP', icon: '🛍️', component: <ShopWindow /> },
