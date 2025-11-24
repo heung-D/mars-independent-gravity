@@ -86,13 +86,21 @@ const Desktop = () => {
   };
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-gradient-to-br from-[hsl(254,80%,35%)] via-[hsl(230,70%,40%)] to-[hsl(195,60%,35%)] relative">
+    <div className="h-screen w-screen overflow-hidden bg-black relative">
+      {/* CRT Overlay Effects */}
+      <div className="crt-overlay fixed inset-0 pointer-events-none z-[9999]">
+        {/* Scanlines */}
+        <div className="absolute inset-0 scanlines"></div>
+        {/* Vignette glow */}
+        <div className="absolute inset-0 vignette"></div>
+      </div>
+
       {/* Starfield Effect */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-20">
         {[...Array(100)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+            className="absolute w-0.5 h-0.5 bg-[#00ff41] rounded-full animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
