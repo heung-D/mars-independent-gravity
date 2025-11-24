@@ -18,7 +18,17 @@ interface OpenWindow {
 }
 
 const Desktop = () => {
-  const [openWindows, setOpenWindows] = useState<OpenWindow[]>([]);
+
+  const [openWindows, setOpenWindows] = useState<OpenWindow[]>([
+    {
+      id: 'dnalab',
+      title: 'DNA LAB',
+      icon: '🧬',
+      component: <DNALabWindow />,
+      minimized: false,
+      zIndex: 100,
+    }
+  ]);
   const [maxZIndex, setMaxZIndex] = useState(100);
 
   const icons = [
